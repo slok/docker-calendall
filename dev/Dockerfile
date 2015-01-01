@@ -1,6 +1,7 @@
 FROM python:3.4.2
 MAINTAINER Xabier Larrakoetxea <slok69@gmail.com>
 
+ENV PYTHONUNBUFFERED 1
 
 RUN apt-get update && \
     apt-get -y -q install git\

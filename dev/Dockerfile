@@ -26,7 +26,10 @@ RUN npm install -g bower yuglify
 RUN groupadd -g 1000 calendall
 RUN useradd -m -u 1000 -g 1000 calendall
 
+
+
 RUN mkdir /code
+RUN chown calendall:calendall /code
 WORKDIR /code
 
 USER calendall

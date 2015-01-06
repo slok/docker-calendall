@@ -22,8 +22,14 @@ RUN rm -rf /tmp/calendall
 # Project Extra dependencies
 RUN npm install -g bower yuglify
 
+# Create the user/group for the running stuff
+RUN groupadd -g 1000 calendall
+RUN useradd -m -u 1000 -g 1000 calendall
+
 RUN mkdir /code
 WORKDIR /code
+
+USER calendall
 
 EXPOSE 8000
 VOLUME /data

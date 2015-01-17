@@ -14,6 +14,9 @@ RUN apt-get update && \
 # Hack for node binary
 RUN ln -s /usr/bin/nodejs /usr/bin/node
 
+# Install psql on steroids
+RUN pip install pgcli
+
 # Project Python dependecies
 RUN git clone https://github.com/calendall/calendall.git /tmp/calendall
 RUN pip install -r /tmp/calendall/requirements/dev.txt
